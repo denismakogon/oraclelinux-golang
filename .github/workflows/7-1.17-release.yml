@@ -27,7 +27,7 @@ jobs:
       - name: just build for now
         uses: docker/build-push-action@v2
         with:
-          file: 7/Dockerfile
+          file: Dockerfile
           context: .
           push: true
           tags: denismakogon/oraclelinux-golang:7-1.17

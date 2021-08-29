@@ -1,8 +1,8 @@
 ARG OEL_BASE_IMAGE
 FROM ${OEL_BASE_IMAGE} as the-latest
 
-RUN if [ $(cat /etc/redhat-release | awk '{print $6}' | tr '.' ' ' | awk '{print $1}') == "7" ]; then \
-    ln -s /usr/bin/yum /usr/bin/microdnf;  \
+RUN if [ $(cat /etc/redhat-release | awk '{print $(NF-1)}' | tr '.' ' ' | awk '{print $1}') == "7" ]; then \
+    ln -s /usr/bin/yum /usr/bin/pkgmgmt;  \
     else  \
     ln -s /usr/bin/microdnf /usr/bin/pkgmgmt; \
     fi && pkgmgmt update -y && pkgmgmt upgrade -y

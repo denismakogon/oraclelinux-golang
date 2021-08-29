@@ -24,7 +24,7 @@ jobs:
           file: Dockerfile
           context: .
           push: false
-          tags: denismakogon/oraclelinux7-golang:1.17
+          tags: denismakogon/oraclelinux-golang:7-1.17
           build-args: |
             OEL_BASE_IMAGE=oraclelinux:7-slim
             GOLANG_VERSION=1.17
